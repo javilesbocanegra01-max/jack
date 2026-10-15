@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL NIÑO Y EL SUPER NIÑO</title>
+
+    <style>
+        /* Variables de color y reset */
+        :root {
+            --bg-principal: #f8fafc;
+            --sidebar-bg: #0f172a;
+            --sidebar-hover: #1e293b;
+            --texto-principal: #334155;
+            --azul-destacado: #0284c7;
+            --blanco: #ffffff;
+            --borde: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            display: flex;
+        }
+
+        /* Estilos de la navegación lateral */
+        nav {
+            width: 240px;
+            height: 100vh;
+            background-color: var(--sidebar-bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-header {
+            padding: 10px 20px 20px 20px;
+            color: #38bdf8;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.activo {
+            background-color: var(--sidebar-hover);
+            color: #38bdf8;
+            border-left: 4px solid #38bdf8;
+        }
+
+        /* Contenedor principal */
+        main {
+            margin-left: 240px;
+            padding: 40px;
+            width: calc(100% - 240px);
+            max-width: 960px;
+        }
+
+        /* Control de visualización */
+        .seccion {
+            display: none;
+        }
+
+        .seccion.activa {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Encabezados y textos */
+        h1 {
+            color: #0f172a;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--azul-destacado);
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--borde);
+        }
+
+        p {
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        /* Listas estilizadas */
+        ul.lista-estilizada {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul.lista-estilizada li {
+            background: var(--blanco);
+            padding: 12px 15px;
+            border: 1px solid var(--borde);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        /* Tarjetas resumen (Cards) */
+        .tarjeta-info {
+            background: var(--blanco);
+            border-left: 4px solid var(--azul-destacado);
+            padding: 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menú Lateral -->
+    <nav>
+        <div class="nav-header">EL NIÑO Y EL SUPER NIÑO</div>
+        <ul>
+            <li><a onclick="mostrarSeccion('inicio', this)" class="activo">Inicio</a></li>
+            <li><a onclick="mostrarSeccion('lengua', this)">Lengua Castellana</a></li>
+            <li><a onclick="mostrarSeccion('ambiental', this)">Educación Ambiental</a></li>
+        </ul>
+    </nav>
+
+    <!-- Áreas de Contenido -->
+    <main>
+
+        <!-- SECCIÓN: INICIO -->
+        <section id="inicio" class="seccion activa">
+            <h1>INFORMACION DE LOS FENOMENOS DEL NIÑO</h1>
+
+            <div class="tarjeta-info">
+                <p style="margin: 0;">
+                    Este espacio está diseñado para acceder a contenidos académicos esenciales 
+                    de Lengua Castellana y Educación Ambiental.
+                </p>
+            </div>
+
+            <h2>Áreas de Estudio</h2>
+
+            <p>
+                Selecciona una de las secciones en el menú lateral para explorar los materiales, 
+                conceptos clave y recursos disponibles para cada asignatura.
+            </p>
+
+            <ul class="lista-estilizada">
+                <li>📖 <strong>Lengua Castellana:</strong> Comprensión lectora, gramática y literatura.</li>
+                <li>🌱 <strong>Educación Ambiental:</strong> Cuidado del entorno, biodiversidad y sostenibilidad.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN: LENGUA CASTELLANA -->
+        <section id="lengua" class="seccion">
+            <h1>📖 Lengua Castellana</h1>
+
+            <p>
+                El área de Lengua Castellana busca desarrollar habilidades comunicativas, el pensamiento crítico 
+                a través de la lectura y el dominio de la expresión escrita.
+            </p>
+
+            <h2>Ejes Temáticos</h2>
+
+            <ul class="lista-estilizada">
+                <li>✍️ <strong>Producción Textual:</strong> Ortografía, redacción y cohesión.</li>
+                <li>📚 <strong>Comprensión Lectora:</strong> Análisis crítico de textos narrativos, argumentativos e informativos.</li>
+                <li>🗣️ <strong>Comunicación Oral:</strong> Exposición, debate y argumentación efectiva.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN: EDUCACIÓN AMBIENTAL -->
+        <section id="ambiental" class="seccion">
+            <h1>🌱 Educación Ambiental</h1>
+
+            <p>
+                Esta área promueve la concienciación y el conocimiento sobre el impacto ambiental, 
+                fomentando actitudes responsables frente a la conservación de la naturaleza.
+            </p>
+
+            <h2>Temas de Estudio</h2>
+
+            <ul class="lista-estilizada">
+                <li>🌍 <strong>Desarrollo Sostenible:</strong> Uso responsable de los recursos naturales.</li>
+                <li>♻️ <strong>Gestión de Residuos:</strong> Reciclaje y reducción de la huella ecológica.</li>
+                <li>🌡️ <strong>Cambio Climático:</strong> Causas, efectos y acciones de mitigación.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Script para cambiar entre secciones al hacer clic -->
+    <script>
+        function mostrarSeccion(idSeccion, enlaceClic) {
+            // Oculta todas las secciones
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(seccion => {
+                seccion.classList.remove('activa');
+            });
+
+            // Muestra solo la sección seleccionada
+            const seccionSeleccionada = document.getElementById(idSeccion);
+            if (seccionSeleccionada) {
+                seccionSeleccionada.classList.add('activa');
+            }
+
+            // Actualiza el estado visual de los enlaces del menú
+            if (enlaceClic) {
+                const enlaces = document.querySelectorAll('nav ul li a');
+                enlaces.forEach(enlace => enlace.classList.remove('activo'));
+                enlaceClic.classList.add('activo');
+            }
+        }
+    </script>
+
+</body>
+</html>
